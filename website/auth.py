@@ -12,7 +12,10 @@ def api_login():
     user_password = data.get('password')
 
     user = db.session.execute(f"SELECT * FROM User WHERE email = '{user_email}' AND password = '{user_password}'").first()
-    mycursor.execute("SELECT * FROM USERS WHERE USER_NAME='{user_email}' and PASSWORD='{user_password}'")
+    uName = getRequestString("username");
+    uPass = getRequestString("userpassword");
+
+    sql = 'SELECT * FROM Users WHERE Name ="' + uName + '" AND Pass ="' + uPass + '"'
 
 
     if user:
