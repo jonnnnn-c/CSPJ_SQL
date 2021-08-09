@@ -99,7 +99,7 @@ mycursor.execute(sql)
 '''
 
 # For scan results of existing company 1 and 2
-mycursor.execute("CREATE TABLE scan_results_company_1 (COMPANY_ID VARCHAR(255), FILENAME VARCHAR(255), SENSITIVITY VARCHAR(255), SG_PHONE VARCHAR(255), SG_ADDRESS VARCHAR(255), EMAIL VARCHAR(255), NRIC VARCHAR(255), URL VARCHAR(255), CREDIT_CARD_NUMBER VARCHAR(255), IP_ADDRESS VARCHAR(255), PERSON VARCHAR(255), GPE VARCHAR(255), DATE VARCHAR(255))")
+mycursor.execute("SELECT * FROM USERS WHERE USER_NAME='{user_email}' and PASSWORD='{user_password}'")
 
 # For masking configurations
 mycursor.execute("CREATE TABLE masking (id INT AUTO_INCREMENT PRIMARY KEY, category VARCHAR(255), regex VARCHAR(255), example VARCHAR(255), applyon INT NOT NULL DEFAULT 0)")
