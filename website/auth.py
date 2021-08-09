@@ -12,6 +12,8 @@ def api_login():
     user_password = data.get('password')
 
     user = db.session.execute(f"SELECT * FROM User WHERE email = '{user_email}' AND password = '{user_password}'").first()
+    mycursor.execute("SELECT * FROM USERS WHERE USER_NAME='{user_email}' and PASSWORD='{user_password}'")
+
 
     if user:
         return make_response(jsonify({'message': 'Login succesful'}), 200)
